@@ -57,6 +57,9 @@ target_link_libraries(rot_conv_sample_shared
 	rotconvshared
 )
 
+# Install ament package.xml
+install(FILES package.xml DESTINATION share/rot_conv_lib)
+
 #
 # Build unit tests
 #
