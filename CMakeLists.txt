@@ -1,5 +1,5 @@
 # Rotations Conversion Library project
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 2.8.12)
 project(rotconv)
 
 # Enable C++11
@@ -85,24 +85,4 @@ if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/googletest)
 	add_test(test_rot_conv test_rot_conv)
 
 endif()
-
-# Find ament_cmake
-find_package(ament_cmake REQUIRED)
-
-# Install include directory
-install(DIRECTORY include/rot_conv/
-        DESTINATION include/${PROJECT_NAME})
-
-# Install shared library
-install(TARGETS rotconvshared
-				EXPORT export_${PROJECT_NAME}
-				ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-				RUNTIME DESTINATION bin)
-
-ament_export_include_directories(include)
-ament_export_libraries(rotconvshared)
-ament_export_dependencies(Eigen3)
-ament_package()
-
 # EOF
