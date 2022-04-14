@@ -16,7 +16,7 @@ tracks:
       :{release_inc} --os-name rhel
     devel_branch: null
     last_release: master
-    last_version: 1.0.10
+    last_version: 1.0.11
     name: rot_conv_lib
     patches: patch
     release_inc: '1'
