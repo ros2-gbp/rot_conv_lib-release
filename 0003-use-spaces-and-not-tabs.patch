@@ -1,0 +1,31 @@
+From 8ca400b4fdc6ce872ed4158041caee3fea10dd85 Mon Sep 17 00:00:00 2001
+From: Kenji Brameld <kenjibrameld@gmail.com>
+Date: Thu, 14 Apr 2022 11:58:07 +0900
+Subject: [PATCH 3/3] use spaces and not tabs
+
+Signed-off-by: Kenji Brameld <kenjibrameld@gmail.com>
+---
+ CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f59b177..bbe97e2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -95,10 +95,10 @@ install(DIRECTORY include/rot_conv/
+ 
+ # Install shared library
+ install(TARGETS rotconvshared
+-				EXPORT export_${PROJECT_NAME}
+-				ARCHIVE DESTINATION lib
++        EXPORT export_${PROJECT_NAME}
++        ARCHIVE DESTINATION lib
+         LIBRARY DESTINATION lib
+-				RUNTIME DESTINATION bin)
++        RUNTIME DESTINATION bin)
+ 
+ # Link dependencies
+ ament_target_dependencies(rotconvstatic Eigen3)
+-- 
+2.34.1
+
