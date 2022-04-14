@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>rotconv</name>
+  <name>rot_conv</name>
   <version>:{version}</version>
   <description>A collection of functions that address common computations and numerical handling of rotations in 3D Euclidean space</description>
   <maintainer email="kenjibrameld@gmail.com">ijnek</maintainer>
