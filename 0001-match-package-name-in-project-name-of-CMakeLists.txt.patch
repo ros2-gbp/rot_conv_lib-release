@@ -1,0 +1,25 @@
+From 10418d00e6067a3091192225aab5dbad62b347ca Mon Sep 17 00:00:00 2001
+From: Kenji Brameld <kenjibrameld@gmail.com>
+Date: Thu, 14 Apr 2022 11:31:01 +0900
+Subject: [PATCH] match package name in project name of CMakeLists.txt
+
+Signed-off-by: Kenji Brameld <kenjibrameld@gmail.com>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 707ab26..0dcb6cf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ # Rotations Conversion Library project
+ cmake_minimum_required(VERSION 2.8.12)
+-project(rotconv)
++project(rot_conv)
+ 
+ # Enable C++11
+ message(STATUS "Enabling C++11")
+-- 
+2.34.1
+
