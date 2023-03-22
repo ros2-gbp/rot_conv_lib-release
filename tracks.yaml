@@ -52,5 +52,4 @@ tracks:
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/AIS-Bonn/rot_conv_lib.git
-    version: 1.0.11
-    version_saved: :{ask}
+    version: :{ask}
