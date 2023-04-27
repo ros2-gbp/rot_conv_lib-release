@@ -1,0 +1,70 @@
+From 6556a010a1d0aa7b171345b408728a79d189128c Mon Sep 17 00:00:00 2001
+From: ijnek <kenjibrameld@gmail.com>
+Date: Thu, 27 Apr 2023 00:26:54 +0000
+Subject: [PATCH] update CMakeLists.txt to work with ament
+
+Signed-off-by: ijnek <kenjibrameld@gmail.com>
+---
+ CMakeLists.txt | 37 +++++++++++++++++++++++++++++++------
+ 1 file changed, 31 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 707ab26..bbe97e2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,16 +1,12 @@
+ # Rotations Conversion Library project
+-cmake_minimum_required(VERSION 2.8.12)
+-project(rotconv)
++cmake_minimum_required(VERSION 3.3)
++project(rot_conv)
+ 
+ # Enable C++11
+ message(STATUS "Enabling C++11")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+ add_compile_options(-Wall -Wextra -Wpedantic)
+ 
+-# Find Eigen
+-find_package(Eigen3 REQUIRED)
+-include_directories(${EIGEN3_INCLUDE_DIR})
+-
+ # Include directories
+ include_directories(${PROJECT_SOURCE_DIR}/include)
+ 
+@@ -85,4 +81,33 @@ if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/googletest)
+ 	add_test(test_rot_conv test_rot_conv)
+ 
+ endif()
++
++# Find ament_cmake
++find_package(ament_cmake REQUIRED)
++
++# Find Eigen3 (See https://github.com/ros2/eigen3_cmake_module/blob/master/README.md for why we need eigen3_cmake_module)
++find_package(eigen3_cmake_module REQUIRED)
++find_package(Eigen3 REQUIRED)
++
++# Install include directory
++install(DIRECTORY include/rot_conv/
++        DESTINATION include/${PROJECT_NAME})
++
++# Install shared library
++install(TARGETS rotconvshared
++        EXPORT export_${PROJECT_NAME}
++        ARCHIVE DESTINATION lib
++        LIBRARY DESTINATION lib
++        RUNTIME DESTINATION bin)
++
++# Link dependencies
++ament_target_dependencies(rotconvstatic Eigen3)
++ament_target_dependencies(rotconvshared Eigen3)
++ament_target_dependencies(rot_conv_sample_direct Eigen3)
++
++ament_export_include_directories(include)
++ament_export_libraries(rotconvshared)
++ament_export_dependencies(eigen3_cmake_module Eigen3)
++ament_package()
++
+ # EOF
+-- 
+2.34.1
+
