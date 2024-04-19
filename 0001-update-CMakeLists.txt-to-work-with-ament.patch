@@ -1,4 +1,4 @@
-From 88594d462b0cd3ae0a0ec9d4a20c2e08951176d6 Mon Sep 17 00:00:00 2001
+From 4a8368c9cb014d6ff01e9aaf5b2433bc59dfaa8c Mon Sep 17 00:00:00 2001
 From: ijnek <kenjibrameld@gmail.com>
 Date: Thu, 27 Apr 2023 00:26:54 +0000
 Subject: [PATCH] update CMakeLists.txt to work with ament
@@ -9,7 +9,7 @@ Signed-off-by: ijnek <kenjibrameld@gmail.com>
  1 file changed, 31 insertions(+), 6 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 707ab2601c90..bbe97e2d5163 100644
+index 707ab26..bbe97e2 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,16 +1,12 @@
@@ -66,5 +66,5 @@ index 707ab2601c90..bbe97e2d5163 100644
 +
  # EOF
 -- 
-2.44.0
+2.44.0.769.g3c40516874-goog
 
